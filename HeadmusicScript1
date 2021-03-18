@@ -1,0 +1,31 @@
+
+print('-- C O M M A N D S - -')
+print('Say ID/ And then the audio id.')
+ 
+print('<< SongStuff >>')
+print('Default Song: +♂ ver れをる')
+ 
+ 
+print('<< ! C O M M A N D S    F I X E D ! >>')
+ 
+ 
+ 
+ 
+ 
+plr = owner    
+char = plr.Character
+torso = char.Torso
+head = char.Head
+sound = Instance.new("Sound", head)
+sound.SoundId = "rbxassetid://"
+sound.Volume = 100
+sound:Play()
+sound.Looped = true
+plr.Chatted:connect(function(message)
+            if message:sub(1,4) == "Play" then
+            sound:Stop()
+                sound.SoundId = "http://www.roblox.com/asset/?id="..message:sub(6)
+    sound:Play()
+    end
+end)
+
