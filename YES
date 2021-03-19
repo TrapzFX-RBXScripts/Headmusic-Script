@@ -1,0 +1,189 @@
+---------------------------------------------------<(  Premium Version  )>---------------------------------------------
+ 
+------------------------------------------<(  Use PUBLIC version or it wont work.  )>--------------------------------------
+
+ 
+ 
+--
+--      _________________
+--     |______  *  ______|
+--            | * |
+--            | R |
+--            | A |
+--            | P |
+--            | Z |
+--            | F |
+--            | X |
+--            | _ |
+--            | A |
+--            | L |
+--            | T |
+--            |___|
+ 
+--------------------------------\
+--      C O M M A N D S       --|
+--------------------------------/
+ 
+--say ID/ and then the audio id to change music id.
+ 
+-------------------------------------\
+--    C O M M A N D S   E N D      --|
+-------------------------------------/
+
+ 
+print('<< I N S H M   V1.5 by TrapzFX loaded! >>')
+print('Pronounced: In-s-hm')
+print('<< U P D A T E    L O G >>')
+ 
+print('Added a new fixed command. See under these messages for the fixed command.')
+print('3/18/2021; Hello. Scripts have been fixed, Commands have been removed, New fixed commands such as; Play, Pause, And Restart.. Coming soon!')
+print('<<  L O G    E N D  >>')
+ 
+ 
+ 
+ 
+print('-- C O M M A N D S - -')
+print('Say ID/ And then the audio id.')
+ 
+print('<< SongStuff >>')
+print('Default Song: +♂ ver れをる')
+ 
+ 
+print('<< ! C O M M A N D S    F I X E D ! >>')
+ 
+ 
+ 
+-------------------------------------\
+--        V A R I A B L E S        --|
+-------------------------------------/
+ 
+ 
+ 
+plr = game.Players.LocalPlayer   
+char = plr.Character
+hum = char.Humanoid
+humDesc = hum.HumanoidDescription
+torso = char.Torso
+LS = torso["Left Shoulder"]
+head = char.Head
+Rleg = char["Right Leg"]
+Lleg = char["Left Leg"]
+Rarm = char["Right Arm"]
+Larm = char["Left Arm"]
+ 
+-------------------------------------\
+-- E N D   O F   V A R I A B L E S --|
+-------------------------------------/
+ 
+--================================--|
+ 
+-------------------------------------\
+--   A V A T A R   C H A N G E R   --|
+-------------------------------------/
+ 
+sound = Instance.new("Sound", head)
+sound.SoundId = "rbxassetid://"
+sound.Volume = 100
+sound:Play()
+sound.Looped = true
+Rleg.Material = "ForceField"
+Lleg.Material = "ForceField"
+Rarm.Material = "ForceField"
+Larm.Material = "ForceField"
+ 
+ 
+hum.Parent["Body Colors"].TorsoColor = BrickColor.new("Dark stone grey")
+hum.Parent["Body Colors"].HeadColor = BrickColor.new("Dark stone grey")
+ 
+ 
+-- test
+mouth = Instance.new("Part", workspace)
+mouth.Anchored = false
+mouth.Parent = head
+mouth.TopSurface = 0
+mouth.BrickColor = BrickColor.new("Black")
+mouth.BottomSurface = 0
+mouth.Material = "SmoothPlastic"
+mouth.Transparency = 1
+mouthm = Instance.new("SpecialMesh", mouth)
+mouthm.MeshType = Enum.MeshType.Sphere
+mouthm.Scale = Vector3.new(.13,0.1,0.05)
+ogsize = mouthm.Scale
+weld = Instance.new("Weld", head)
+weld.Part0 = mouth
+weld.Part1 = head
+weld.C1 = CFrame.new(0,-.25,-.6)
+game:service'RunService'.RenderStepped:connect(function()
+mouthm.Scale = mouthm.Scale:lerp(Vector3.new(ogsize.X+sound.PlaybackLoudness/20000,sound.PlaybackLoudness/1000,ogsize.Z),0.8)
+LS.C0 = LS.C0:lerp(CFrame.new(0,1,0)*CFrame.Angles(math.rad(mouthm.Scale.Y*100)    +math.rad(-90),0,math.rad(180)),0.1)
+end)
+ 
+--test end
+ 
+humDesc.RunAnimation = "6537044761"
+humDesc.WalkAnimation = "6537044761"
+humDesc.IdleAnimation = "6537044761"
+ 
+ 
+ 
+ 
+--Headphones Test
+h = Instance.new("Hat")
+p = Instance.new("Part")
+m = Instance.new("SpecialMesh")
+h.Name = "Headphones"
+p.Parent = h
+p.Position = hum.Parent:findFirstChild("Head").Position
+p.Name = "Handle" 
+p.formFactor = 0
+p.Size = Vector3.new(2, 1, 1) 
+p.BottomSurface = 0 
+p.TopSurface = 0 
+p.Locked = true 
+m.MeshId = "rbxassetid://1051545"
+h.Parent = plr
+h.AttachmentPos = Vector3.new(0, 0.3, 0)
+--End of headphones test.
+ 
+--------------------------------\
+--      C O M M A N D S       --|
+--------------------------------/
+ 
+plr.Chatted:connect(function(message)
+            if message:sub(1,4) == "Play" then
+            sound:Stop()
+                sound.SoundId = "http://www.roblox.com/asset/?id="..message:sub(6)
+    sound:Play()
+    end
+end)
+ 
+---------------------------------------------------------------\
+--              E N D     O F    C O M M A N D S             --|
+---------------------------------------------------------------/
+ 
+--==========================================================--|
+ 
+---------------------------------------------------------------\
+--         E N D    S C R I P T S   A N D   A N I M S        --|
+---------------------------------------------------------------/
+ 
+--==========================================================--|
+ 
+---------------------------------------------------------------\
+--                     T E S T   C O D E                     --|
+---------------------------------------------------------------|
+--|- < Remove this if it breaks the script. -TrapzFX_Alt > -|--|
+--\=========================================================/--/
+ 
+while true do                                               --|
+wait(0.06)                                                  --|
+Larm.BrickColor = BrickColor.random()                       --|
+Rarm.BrickColor = BrickColor.random()                       --|
+Lleg.BrickColor = BrickColor.random()                       --|
+Rleg.BrickColor = BrickColor.random()                       --|
+RMparticle.Color = BrickColor.random()                      --|
+end                                                         --|
+ 
+---------------------------------------------------------------\
+--              E N D   O F   T E S T   C O D E              --|
+---------------------------------------------------------------/
