@@ -181,7 +181,6 @@ hum.Parent["Body Colors"].HeadColor = BrickColor.new("Dark stone grey")
 -- test
 game:service'RunService'.Stepped:wait(0)
     Rarm.C0 = neck.C0:lerp(CFrame.new(0,1,0)*CFrame.Angles(math.rad(Rarm.Scale.Y*100)    +math.rad(-90),0,math.rad(180)),0.1)
-end
  
 --test end
  
